@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--To Do List View Controller-->
+        <scene sceneID="todoListScene">
+            <objects>
+                <viewController storyboardIdentifier="ToDoListViewController" id="todoListVC" customClass="ToDoListViewController" customModule="BuggyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="todoListView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4PG-vW-EfY">
+                                <rect key="frame" x="0.0" y="48" width="414" height="848"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" id="Er5-WJ-MA1" customClass="ToDoCell" customModule="BuggyApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Er5-WJ-MA1" id="YXt-yn-fWx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="u9J-1k-FRt">
+                                                    <rect key="frame" x="12" y="8" width="390" height="32"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds3-nZ-XHg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="329" height="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3uj-eX-QOx">
+                                                            <rect key="frame" x="341" y="0.0" width="51" height="32"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="31.5" id="GnV-Z7-JOb"/>
+                                                                <constraint firstAttribute="width" constant="49" id="RuM-sl-3X7"/>
+                                                            </constraints>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="u9J-1k-FRt" secondAttribute="trailing" constant="12" id="5BS-pl-DUG"/>
+                                                <constraint firstItem="u9J-1k-FRt" firstAttribute="top" secondItem="YXt-yn-fWx" secondAttribute="top" constant="8" id="Vp6-05-Eb7"/>
+                                                <constraint firstItem="u9J-1k-FRt" firstAttribute="leading" secondItem="YXt-yn-fWx" secondAttribute="leading" constant="12" id="mw1-IB-Q7H"/>
+                                                <constraint firstAttribute="bottom" secondItem="u9J-1k-FRt" secondAttribute="bottom" constant="8" id="nrM-PY-NuM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="completedSwitch" destination="3uj-eX-QOx" id="om3-TD-Bez"/>
+                                            <outlet property="titleLabel" destination="ds3-nZ-XHg" id="VUm-bY-K0k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jGC-F0-5hO"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4PG-vW-EfY" secondAttribute="bottom" id="O7D-Up-Yga"/>
+                            <constraint firstItem="4PG-vW-EfY" firstAttribute="leading" secondItem="jGC-F0-5hO" secondAttribute="leading" id="RSK-CS-wMq"/>
+                            <constraint firstItem="4PG-vW-EfY" firstAttribute="trailing" secondItem="jGC-F0-5hO" secondAttribute="trailing" id="uWw-Vg-fhZ"/>
+                            <constraint firstItem="4PG-vW-EfY" firstAttribute="top" secondItem="jGC-F0-5hO" secondAttribute="top" id="xA3-4z-GOt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="4PG-vW-EfY" id="jBR-r9-xwg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="todoListFirstResponder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="517" y="0.0"/>
+        </scene>
+        <!--Add To Do View Controller-->
+        <scene sceneID="addTodoScene">
+            <objects>
+                <viewController storyboardIdentifier="AddToDoViewController" id="addTodoVC" customClass="AddToDoViewController" customModule="BuggyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="addTodoView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter todo" translatesAutoresizingMaskIntoConstraints="NO" id="addTextField">
+                                <rect key="frame" x="20" y="100" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="nSY-4F-QBe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9H-cU-OY1">
+                                <rect key="frame" x="20" y="160" width="100" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saveButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="addTodoVC" eventType="touchUpInside" id="Cer-96-UDj"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Kr-QK-fiM">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="eiT-t0-1la"/>
+                                            <constraint firstAttribute="height" constant="30" id="gEv-2n-wvF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="N3i-oG-OEF"/>
+                                    <constraint firstItem="8Kr-QK-fiM" firstAttribute="top" secondItem="w9H-cU-OY1" secondAttribute="top" id="NsU-6e-VPe"/>
+                                    <constraint firstAttribute="bottom" secondItem="saveButton" secondAttribute="bottom" id="Rcv-UF-oyA"/>
+                                    <constraint firstItem="8Kr-QK-fiM" firstAttribute="leading" secondItem="w9H-cU-OY1" secondAttribute="leading" id="XYR-hm-bbl"/>
+                                    <constraint firstItem="saveButton" firstAttribute="top" secondItem="w9H-cU-OY1" secondAttribute="top" id="ZK4-RK-ubU"/>
+                                    <constraint firstAttribute="trailing" secondItem="saveButton" secondAttribute="trailing" id="ZdK-Od-dIj"/>
+                                    <constraint firstAttribute="width" constant="100" id="fz8-jM-98Q"/>
+                                    <constraint firstItem="saveButton" firstAttribute="leading" secondItem="w9H-cU-OY1" secondAttribute="leading" id="r0O-BA-HVf"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Kr-QK-fiM" secondAttribute="bottom" id="rfg-XO-z6z"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Kr-QK-fiM" secondAttribute="trailing" id="xB4-lK-vbC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3bO-tG-lWh"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="addTextField" firstAttribute="leading" secondItem="3bO-tG-lWh" secondAttribute="leading" constant="20" id="8nU-Nn-JWK"/>
+                            <constraint firstItem="addTextField" firstAttribute="top" secondItem="3bO-tG-lWh" secondAttribute="top" constant="52" id="Av7-KI-FRr"/>
+                            <constraint firstItem="w9H-cU-OY1" firstAttribute="top" secondItem="addTextField" secondAttribute="bottom" constant="26" id="Hkq-GS-0Xc"/>
+                            <constraint firstItem="w9H-cU-OY1" firstAttribute="leading" secondItem="3bO-tG-lWh" secondAttribute="leading" constant="20" id="OQA-ey-vQe"/>
+                            <constraint firstItem="3bO-tG-lWh" firstAttribute="trailing" secondItem="addTextField" secondAttribute="trailing" constant="20" id="l61-TM-z15"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="addTextField" id="RK0-4O-epn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="addTodoFirstResponder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="0.0"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="detailScene">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="detailVC" customClass="DetailViewController" customModule="BuggyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="detailView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Detail" lineBreakMode="tailTruncation" id="detailLabel">
+                                <rect key="frame" x="20" y="100" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xd1-J6-eKA"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="detailLabel" id="eFA-eo-aQl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="detailFirstResponder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="0.0"/>
+        </scene>
+    </scenes>
+</document>
