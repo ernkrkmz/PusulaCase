@@ -5,4 +5,11 @@ struct ToDo: Codable {
     let title: String
     let completed: Bool
     let userID: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case completed
+        case userID = "userId"
+    }
 }

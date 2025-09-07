@@ -12,7 +12,10 @@ class APIService {
         URLSession.shared.dataTask(with: url) { data, _, _ in
             if let data = data {
                 let todos = try? JSONDecoder().decode([ToDo].self, from: data)
-                self.delegate?.didFetchTodos(todos ?? [])
+                Globals.shared.setLastId(todos?.last?.id ?? 0)
+                // Kullanıcıya özel filtreleme
+                let filtered = todos?.filter { $0.userID == Globals.shared.userId}
+                self.delegate?.didFetchTodos(filtered ?? [])
             }
         }.resume()
     }
